@@ -1,0 +1,145 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.ui.table" xmlns:m="sap.m"
+	xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" height="100%">
+	<m:Table  sticky="ColumnHeaders,HeaderToolbar,InfoToolbar" noDataText="Drop column list items here and columns in the area above" id="table0"
+		items="{path:'BillDocItem_model>/I_BillingDocument',parameters:{select:'BillingDocument,SalesOrganization,DistributionChannel,Division,BillingDocumentDate,BillingDocumentIsCancelled,SDDocumentCategory,TotalNetAmount,TransactionCurrency,TotalGrossAmount,BillingDocumentCategory,TaxAmount,CreatedByUser,PayerParty,PaymentMethod,CompanyCode,CreationDate,SoldToParty,Country,CityCode,SalesDistrict,Region,County'},templateShareable:false}"
+		growingScrollToLoad="true" growingThreshold="7" growing="true" width="100%">
+		<m:headerToolbar>
+			<m:Toolbar>
+				<m:content>
+					<m:Title text="{i18n>BillingDocument}" level="H2"/>
+					<m:ToolbarSpacer/>
+					<m:ToggleButton id="toggleInfoToolbar" text="{i18n>hideshowinfotoolbar}" press="onToggleInfoToolbar"/>
+				</m:content>
+			</m:Toolbar>
+		</m:headerToolbar>
+		<m:infoToolbar>
+			<m:Toolbar active="ture">
+				<m:Label text="{i18n>infotoolbarlabeltext}"/>
+			</m:Toolbar>
+		</m:infoToolbar>
+		<m:items>
+			<m:ColumnListItem type="Active" id="item2">
+				<m:cells >
+					<m:Link press="onBillingDocumentClick" text="{BillDocItem_model>BillingDocument}"/>
+					<m:ObjectIdentifier text="{BillDocItem_model>SalesOrganization}"/>
+					<m:ObjectIdentifier text="{BillDocItem_model>DistributionChannel}"/>
+					<m:ObjectIdentifier text="{BillDocItem_model>Division}"/>
+					<m:ObjectIdentifier text="{BillDocItem_model>BillingDocumentDate}"/>
+					<m:ObjectIdentifier text="{BillDocItem_model>BillingDocumentIsCancelled}"/>
+					<m:ObjectIdentifier text="{BillDocItem_model>SDDocumentCategory}"/>
+					<m:ObjectIdentifier text="{BillDocItem_model>TotalNetAmount}"/>
+					<m:ObjectIdentifier text="{BillDocItem_model>TransactionCurrency}"/>
+					<m:ObjectIdentifier text="{BillDocItem_model>TotalGrossAmount}"/>
+					<m:ObjectIdentifier text="{BillDocItem_model>BillingDocumentCategory}"/>
+					<m:ObjectIdentifier text="{BillDocItem_model>TaxAmount}"/>
+					<m:ObjectIdentifier text="{BillDocItem_model>CreatedByUser}"/>
+					<m:ObjectIdentifier text="{BillDocItem_model>PayerParty}"/>
+					<m:ObjectIdentifier text="{BillDocItem_model>PaymentMethod}"/>
+					<m:ObjectIdentifier text="{BillDocItem_model>CreationDate}"/>
+					<m:ObjectIdentifier text="{BillDocItem_model>CompanyCode}"/>
+					<m:ObjectIdentifier text="{BillDocItem_model>SoldToParty}"/>
+					<m:ObjectIdentifier text="{BillDocItem_model>Country}"/>
+					<m:ObjectIdentifier text="{BillDocItem_model>CityCode}"/>
+					<m:ObjectIdentifier text="{BillDocItem_model>SalesDistrict}"/>
+					<m:ObjectIdentifier text="{BillDocItem_model>Region}"/>
+				</m:cells>
+			</m:ColumnListItem>
+		</m:items>
+		<m:columns>
+			<m:Column id="column1" width="11rem" demandPopin="true">
+				<m:header>
+					<!--<m:Label text="BillingDocument" id="label0"/>-->
+					<m:Button id="BillingDocument" text="{i18n>BillingDocument}" type="Transparent" press="handleBillDocFilter">
+						<m:layoutData>
+							<m:OverflowToolbarLayoutData priority="NeverOverflow"/>
+						</m:layoutData>
+					</m:Button>
+				</m:header>
+			</m:Column>
+			<m:Column id="column105" width="11rem">
+				<m:header><m:Text text="{i18n>SalesOrganization}" id="label104"/>
+				</m:header>
+			</m:Column>
+			<m:Column id="column16" width="11rem">
+				<m:header><m:Label text="{i18n>DistributionChannel}" id="label15"/>
+				</m:header>
+			</m:Column>
+			<m:Column id="column29" width="11rem">
+				<m:header><m:Label text="{i18n>Division}" id="label28"/>
+				</m:header>
+			</m:Column>
+			<m:Column id="column14" width="11rem">
+				<m:header><m:Label text="{i18n>BillingDocumentDate}" id="label13"/>
+				</m:header>
+			</m:Column>
+			<m:Column id="column3" width="11rem">
+				<m:header><m:Label text="{i18n>BillingDocumentIsCancelled}" id="label2"/>
+				</m:header>
+			</m:Column>
+			<m:Column id="column2" width="11rem">
+				<m:header><m:Label text="{i18n>SDDocumentCategory}" id="label1"/>
+				</m:header>
+			</m:Column>
+			<m:Column id="column48" width="11rem">
+				<m:header><m:Label text="{i18n>TotalNetAmount}" id="label47"/>
+				</m:header>
+			</m:Column>
+			<m:Column id="column92" width="11rem">
+				<m:header><m:Label text="{i18n>TransactionCurrency}" id="label91"/>
+				</m:header>
+			</m:Column>
+			<m:Column id="column102" width="11rem">
+				<m:header><m:Label text="{i18n>TotalGrossAmount}" id="label101"/>
+				</m:header>
+			</m:Column>
+			<m:Column id="column4" width="11rem">
+				<m:header><m:Label text="{i18n>BillingDocumentCategory}" id="label3"/>
+				</m:header>
+			</m:Column>
+			<m:Column id="column110" width="11rem">
+				<m:header><m:Label text="{i18n>TaxAmount}" id="label109"/>
+				</m:header>
+			</m:Column>
+			<m:Column id="column66" width="11rem">
+				<m:header><m:Label text="{i18n>CreatedByUser}" id="label65"/>
+				</m:header>
+			</m:Column>
+			<m:Column id="column111" width="11rem">
+				<m:header><m:Label text="{i18n>PayerParty}" id="label110"/>
+				</m:header>
+			</m:Column>
+			<m:Column id="column112" width="11rem">
+				<m:header><m:Label text="{i18n>PaymentMethod}" id="label111"/>
+				</m:header>
+			</m:Column>
+			<m:Column id="column77" width="11rem">
+				<m:header><m:Label text="{i18n>CreationDate}" id="label76"/>
+				</m:header>
+			</m:Column>
+			<m:Column id="column88" width="11rem">
+				<m:header><m:Label text="{i18n>CompanyCode}" id="label87"/>
+				</m:header>
+			</m:Column>
+			<m:Column id="column113" width="11rem">
+				<m:header><m:Label text="{i18n>SoldToParty}" id="label112"/>
+				</m:header>
+			</m:Column>
+			<m:Column id="column114" width="11rem">
+				<m:header><m:Label text="{i18n>Country}" id="label113"/>
+				</m:header>
+			</m:Column>
+			<m:Column id="column115" width="11rem">
+				<m:header><m:Label text="{i18n>CityCode}" id="label114"/>
+				</m:header>
+			</m:Column>
+			<m:Column id="column116" width="11rem">
+				<m:header><m:Label text="{i18n>SalesDistrict}" id="label115"/>
+				</m:header>
+			</m:Column>
+			<m:Column id="column117" width="11rem">
+				<m:header><m:Label text="{i18n>Region}" id="label116"/>
+				</m:header>
+			</m:Column>
+		</m:columns>
+	</m:Table>
+</core:FragmentDefinition>

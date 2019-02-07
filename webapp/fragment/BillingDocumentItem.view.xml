@@ -1,0 +1,22 @@
+<core:View xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+	xmlns:smartTable="sap.ui.comp.smarttable" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" height="100%"
+	controllerName="com.teklink.fiori.ZBILLINGDOCUMENTITEM_UI5.controller.fragment.BillingDocumentItem">
+	<VBox fitContainer="true">
+		<smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="Z_I_BillingDocumentItem" persistencyKey="SmartFilter_Explored">
+			<!-- layout data used to make the table growing but the filter bar fixed -->
+			<smartFilterBar:layoutData>
+				<FlexItemData shrinkFactor="0"/>
+			</smartFilterBar:layoutData>
+		</smartFilterBar:SmartFilterBar>
+		<smartTable:SmartTable id="billingDocumentItemTable" entitySet="Z_I_BillingDocumentItem" smartFilterId="smartFilterBar" useExportToExcel="true" beforeRebindTable="onBeforeRebindTable"
+			beforeExport="onBeforeExport" useVariantManagement="false" useTablePersonalisation="true" header="BillingDocumentItem" showRowCount="true"
+			persistencyKey="SmartTableRefApp_Explored"
+			initiallyVisibleFields="BillingDocument,BillingDocumentItem,BillToPartyCountry"
+			enableAutoBinding="true" class="sapUiResponsiveContentPadding"  >
+			<!-- layout data used to make the table growing but the filter bar fixed -->
+			<smartTable:layoutData>
+				<FlexItemData growFactor="1" baseSize="0%"/>
+			</smartTable:layoutData>
+		</smartTable:SmartTable>
+	</VBox>
+</core:View>

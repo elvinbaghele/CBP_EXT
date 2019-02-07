@@ -1,0 +1,11 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Popover showHeader="false" placement="Bottom">
+		<footer>
+			<Toolbar>
+				<MultiComboBox id="multicomboFilter" items="{path:'BillDocItem_model>/I_BillingDocument',parameters:{select:'BillingDocument'}}" selectionFinish="afterSelectBillDoc" placeholder="Filter" width="200px">
+					<core:Item key="{BillDocItem_model>BillingDocument}" text="{BillDocItem_model>BillingDocument}"/>
+				</MultiComboBox>
+			</Toolbar>
+		</footer>
+	</Popover>
+</core:FragmentDefinition>

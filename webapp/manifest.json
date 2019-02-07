@@ -1,0 +1,128 @@
+{
+	"_version": "1.8.0",
+	"sap.app": {
+		"id": "com.teklink.fiori.ZBILLINGDOCUMENTITEM_UI5",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "servicecatalog.connectivityComponentForManifest",
+			"version": "0.0.0"
+		},
+		"dataSources": {
+			"Z_I_BILLINGDOCUMENTITEM_CDS": {
+				"uri": "/sap/opu/odata/sap/Z_I_BILLINGDOCUMENTITEM_CDS/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/Z_I_BILLINGDOCUMENTITEM_CDS/metadata.xml"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize"
+		]
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "com.teklink.fiori.ZBILLINGDOCUMENTITEM_UI5.view.Main",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.60.1",
+			"libs": {
+				"sap.m": {},
+				"sap.tnt": {
+					"minVersion": ""
+				},
+				"sap.ui.core": {},
+				"sap.ui.layout": {},
+				"sap.ui.table": {
+					"minVersion": ""
+				}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "com.teklink.fiori.ZBILLINGDOCUMENTITEM_UI5.i18n.i18n"
+				}
+			},
+			"BillDocItem_model": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "Z_I_BILLINGDOCUMENTITEM_CDS",
+				"preload": true
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "com.teklink.fiori.ZBILLINGDOCUMENTITEM_UI5.view",
+				"controlAggregation": "pages",
+				"controlId": "idAppControl",
+				"clearControlAggregation": false
+			},
+			"routes": [
+				{
+					"name": "RouteMain",
+					"pattern": "RouteMain",
+					"target": [
+						"TargetMain"
+					]
+				}
+			],
+			"targets": {
+				"TargetMain": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewName": "Main"
+				},
+				"SideNavigation": {
+					"viewType": "XML",
+					"viewName": "SideNavigation"
+				}
+			}
+		}
+	}
+}
